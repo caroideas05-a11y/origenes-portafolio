@@ -9,7 +9,7 @@ type Project = {
 
 async function getProjects(): Promise<Project[]> {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  const key = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY;
   if (!url || !key) return [];
   const db = createClient(url, key);
   const { data } = await db.from("projects").select("*").eq("published", true)
