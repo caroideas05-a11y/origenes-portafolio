@@ -16,7 +16,7 @@ export default function HeroGallery() {
     setCurrent((prev) => (prev + 1) % (images.length + 1));
   }
 
-  return (
+  return ( 
     <div className="hero-art" style={{ position: "relative" }}>
       <div className="art-frame">
         <div className="art-inner">
