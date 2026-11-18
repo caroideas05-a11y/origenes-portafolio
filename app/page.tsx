@@ -12,8 +12,11 @@ async function getProjects(): Promise<Project[]> {
   const key = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY;
   if (!url || !key) return [];
   const db = createClient(url, key);
-  const { data } = await db.from("projects").select("*").eq("published", true)
-  .order("created_at", { ascending: false });
+const { data, error } = await db.from("projects").select("*").eq("published", true)
+.order("created_at", { ascending: false });if (error) {
+  console.error("Error cargando proyectos:", error);
+  return [];
+}
 return (data || []) as Project[];
 }
 
