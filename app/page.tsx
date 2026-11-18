@@ -2,6 +2,8 @@ import Link from "next/link";
 import { ArrowDownRight, ArrowUpRight, Instagram, Play, Sparkles } from "lucide-react";
 import { createClient } from "@supabase/supabase-js";
 
+export const dynamic = "force-dynamic";
+
 type Project = {
   id: string; title: string; category: string; description: string | null;
   video_url: string; cover_url: string | null; featured: boolean;
