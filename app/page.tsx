@@ -13,8 +13,8 @@ async function getProjects(): Promise<Project[]> {
   if (!url || !key) return [];
   const db = createClient(url, key);
   const { data } = await db.from("projects").select("*").eq("published", true)
-    .order("featured", { ascending: false }).order("created_at", { ascending: false });
-  return (data || []) as Project[];
+  .order("created_at", { ascending: false });
+return (data || []) as Project[];
 }
 
 const categories = ["Todos", "Gastronomía", "Eventos", "Producción audiovisual", "Branding y diseño"];
