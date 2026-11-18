@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowDownRight, ArrowUpRight, Instagram, Play, Sparkles } from "lucide-react";
 import { createClient } from "@supabase/supabase-js";
-
+import HeroGallery from "./HeroGallery";
 export const dynamic = "force-dynamic";
 
 type Project = {
@@ -41,10 +41,7 @@ export default async function Home() {
           <p className="hero-text">Estrategia, creatividad y producción audiovisual para marcas que quieren comunicar con intención y destacar.</p>
           <div className="hero-actions"><a className="button dark" href="#proyectos">Explorar proyectos <ArrowDownRight size={17}/></a><a className="textlink" href="#servicios">Conoce lo que hacemos</a></div>
         </div>
-        <div className="hero-art">
-          <div className="art-frame"><div className="art-inner"><span className="art-word">O.</span><span className="art-caption">CONTENIDO · DISEÑO · EXPERIENCIAS</span></div></div>
-          <div className="art-stamp">CHICLAYO<br/>PERÚ<br/>— 2026</div>
-        </div>
+        <HeroGallery />
       </section>
 
       <section className="intro-band"><div className="wrap intro-inner"><p>NO SOLO PUBLICAMOS.</p><h2>Construimos formas<br/>de contar tu marca.</h2><span>De la idea a la pantalla, creamos piezas que conectan con personas reales.</span></div></section>
